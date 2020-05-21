@@ -1,0 +1,50 @@
+body{
+    width: 100%;
+    min-height: 700px;
+min-width: 600px;
+}
+.cell{
+    width: 30px;
+text-align: center;
+    height: 30px;
+    font-weight: bold;
+    background-color: rgb(90, 90, 90);
+}
+.shown{
+    background-color: rgb(62, 209, 126);
+}
+.life{ 
+background-color: red;  
+}
+.hint{
+background-color: greenyellow;
+}
+button{
+    position: relative;
+    display: inline-block;
+    border-radius: 10px;
+}
+.negs1{
+    color: seashell;
+}
+.negs2{
+    color: red
+}
+.negs3{
+    color: blueviolet;
+}
+.negs4{
+    color:blue
+}
+.negs0{
+    color:  deepskyblue;
+}
+
+table{
+    margin: 0 auto;
+}
+.menu{
+    margin: 0 auto;
+    text-align: center;
+    color: saddlebrown;
+}
