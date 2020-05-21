@@ -57,7 +57,10 @@ function initGame() {
     var elTimer = document.querySelector('.sec');
     elTimer.innerText = gGame.secsPassed;
     gGame.isOn = true;
+    var prevBest = localStorage.getItem(gLevel.lvlName);
    
+    var elBest=document.querySelector('.best');
+    elBest.innerText='Best Score: '+gLevel.lvlName+': '+prevBest;
 }
 
 function cellMarked(elCell, i, j) {
@@ -146,7 +149,7 @@ function cellClicked(elCell, i, j) {
         checkGameOver();
     }
     ++gGame.turn;
-
+    
 }
 
 

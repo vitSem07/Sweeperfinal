@@ -56,13 +56,14 @@ function renderCell(i, j) {
     toggleClass(elCell, 'shown');
 }
 function localStore() {
-    var prevBest = localStorage.getItem(gLevel.lvlName);
+    var prevBest = +localStorage.getItem(gLevel.lvlName);
     if (!prevBest) localStorage.setItem(gLevel.lvlName, gGame.secsPassed);
     if (prevBest > gGame.secsPassed) {
+        prevBest=gGame.secsPassed
         localStorage.setItem(gLevel.lvlName, gGame.secsPassed);
     }
     var elBest=document.querySelector('.best');
-    elBest.innerText='Best Score: '+gLevel.lvlName+': '+gGame.secsPassed;
+    elBest.innerText='Best Score: '+gLevel.lvlName+': '+prevBest;
 }
 function timer() {
     gGame.secsPassed += 1;
