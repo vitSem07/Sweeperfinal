@@ -1,50 +1,110 @@
-body{
+body {
     width: 100%;
     min-height: 700px;
-min-width: 600px;
-}
-.cell{
-    width: 30px;
-text-align: center;
-    height: 30px;
-    font-weight: bold;
-    background-color: rgb(90, 90, 90);
-}
-.shown{
-    background-color: rgb(62, 209, 126);
-}
-.life{ 
-background-color: red;  
-}
-.hint{
-background-color: greenyellow;
-}
-button{
-    position: relative;
-    display: inline-block;
-    border-radius: 10px;
-}
-.negs1{
-    color: seashell;
-}
-.negs2{
-    color: red
-}
-.negs3{
-    color: blueviolet;
-}
-.negs4{
-    color:blue
-}
-.negs0{
-    color:  deepskyblue;
+    min-width: 600px;
+
 }
 
-table{
-    margin: 0 auto;
+.cell {
+    width: 30px;
+    text-align: center;
+    height: 30px;
+    font-weight: bold;
+    background-color: rgb(141, 141, 141);
+    transition: 0.5s;
+    border-radius: 8px;
+    border-collapse: 1px;
 }
-.menu{
+
+.cell:hover {
+    background-color: cornsilk;
+    cursor: pointer;
+}
+
+.life {
+    background-color: red;
+}
+
+.life:hover {
+    background-color: red;
+}
+
+button {
+    position: relative;
+    display: inline-block;
+    border-radius: 7px;
+    margin: auto 0;
+    border: 1px;
+
+}
+
+button:hover {
+    background-color: rgb(255, 205, 96);
+    ;
+    transition: 0.5s;
+    color: oldlace;
+}
+
+.hint {
+    background-color: greenyellow;
+}
+
+.negs1 {
+    color: midnightblue;
+}
+
+.negs2 {
+    color: red
+}
+
+.negs3 {
+    color: blueviolet;
+}
+
+.negs4 {
+    color: blue
+}
+
+.negs5 {
+    color: deepskyblue;
+}
+
+table {
+    margin: 0 auto;
+    border-radius: 5px;
+
+
+    border-collapse: 1px;
+
+}
+
+.menu {
     margin: 0 auto;
     text-align: center;
-    color: saddlebrown;
+    color: rgb(247, 103, 0);
+}
+
+.shown {
+    background-color: rgb(255, 205, 96);
+}
+
+.shown:hover {
+    background-color: rgb(255, 205, 96);
+}
+
+.sec {
+    font-family: Impact, Charcoal, sans-serif;
+    font-size: 18px;
+    color: oldlace;
+    opacity: 0.7;
+
+    margin: 0 0;
+    position: absolute;
+    text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+}
+
+h1 {
+    text-align: center;
+    color: rgb(141, 141, 141);
+
 }

@@ -1,4 +1,4 @@
-console.log('Utils');
+'use strict'
 
 function buildBoard(colsAndRows) {
     var board = [];
@@ -55,16 +55,18 @@ function renderCell(i, j) {
     }
     toggleClass(elCell, 'shown');
 }
+
 function localStore() {
     var prevBest = +localStorage.getItem(gLevel.lvlName);
     if (!prevBest) localStorage.setItem(gLevel.lvlName, gGame.secsPassed);
     if (prevBest > gGame.secsPassed) {
-        prevBest=gGame.secsPassed
+        prevBest = gGame.secsPassed;
         localStorage.setItem(gLevel.lvlName, gGame.secsPassed);
     }
-    var elBest=document.querySelector('.best');
-    elBest.innerText='Best Score: '+gLevel.lvlName+': '+prevBest;
+    var elBest = document.querySelector('.best');
+    elBest.innerText = '🏆 ' + gLevel.lvlName + ': ' + prevBest;
 }
+
 function timer() {
     gGame.secsPassed += 1;
     var elTimerSec = document.querySelector('.sec');
@@ -112,8 +114,8 @@ function checkGameOver() {
         clearInterval(gGame.gTimeInterval);
         localStore()
         gGame.isOn = false;
-        var elSmiley=document.querySelector('.smiley');
-        elSmiley.innerText='😎';
+        var elSmiley = document.querySelector('.smiley');
+        elSmiley.innerText = '😎';
     }
 }
 
@@ -135,6 +137,7 @@ function countNegs(board, idx, jdx) {
         }
     }
 }
+
 function mode(size, mines, lvlName) {
     gLevel = {
         size: size,

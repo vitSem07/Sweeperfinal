@@ -1,10 +1,10 @@
 'use strict'
-console.log('Mine Sweeper');
+
 var gGame;
 var gLevel = {
     size: 4,
     mines: 2,
-    lvlName: 'easy'
+    lvlName: 'Easy'
 }
 var gBoard;
 const BOMB = '💣';
@@ -53,14 +53,15 @@ function initGame() {
         var elSafe = document.querySelectorAll('.safe');
         elSafe.innerText = gGame.safeClicks;
     } else if (gGame.isManual) manual();
-
+    var elSmiley = document.querySelector('.smiley');
+    elSmiley.innerText = '😀';
     var elTimer = document.querySelector('.sec');
     elTimer.innerText = gGame.secsPassed;
     gGame.isOn = true;
     var prevBest = localStorage.getItem(gLevel.lvlName);
-   
-    var elBest=document.querySelector('.best');
-    elBest.innerText='Best Score: '+gLevel.lvlName+': '+prevBest;
+    if (!prevBest) prevBest = 0
+    var elBest = document.querySelector('.best');
+    elBest.innerText = '🏆 ' + gLevel.lvlName + ': ' + prevBest + ' Seconds';
 }
 
 function cellMarked(elCell, i, j) {
@@ -119,8 +120,8 @@ function cellClicked(elCell, i, j) {
             clearInterval(gGame.gTimeInterval);
             gGame.isOn = false;
             gGame.prevTurns.push('game over');
-            var elSmiley=document.querySelector('.smiley');
-            elSmiley.innerText='😵';
+            var elSmiley = document.querySelector('.smiley');
+            elSmiley.innerText = '😵';
         }
         return
     }
@@ -149,7 +150,7 @@ function cellClicked(elCell, i, j) {
         checkGameOver();
     }
     ++gGame.turn;
-    
+
 }
 
 
@@ -240,8 +241,8 @@ function undo() {
         toggleClass(elBtn, 'lifeUsed');
         if (prevTurn === 'game over') {
             gGame.isOn = true;
-            var elSmiley=document.querySelector('.smiley');
-            elSmiley.innerText='😀';
+            var elSmiley = document.querySelector('.smiley');
+            elSmiley.innerText = '😀';
             toggleBombs(gBoard);
             gGame.gTimeInterval = setInterval(() => {
                 timer();
@@ -264,6 +265,3 @@ function undo() {
     gGame.prevTurns.pop();
     gGame.isUndo = false;
 }
-
-
-

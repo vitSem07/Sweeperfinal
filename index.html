@@ -9,41 +9,42 @@
 </head>
 
 <body onload="initGame()">
-    
+    <h1>Mine Sweeper!</h1>
 
-    <table border="1">
-        <tbody >
-            <h1 class="menu">Mine Sweeper Game!</h1>
-            <div class="menu"> <span class="best">Best Score:0</span></div>
-            <div class="menu" > <span class="sec">0</span></div>
+    <table>
+        <tbody>
+            <div class="menu"><span class="best">🏆 0</span></div>
             <tr class="menu">
                 <td class="life cell">🧡 </td>
                 <td class="life cell">🧡 </td>
                 <td class="life cell">🧡 </td>
-                <td class="smiley cell"  onclick="initGame()">😀 </td>
+                <td class="smiley cell" onclick="initGame()">😀 </td>
                 <td class="hint cell" onclick="HintClicked(this)">💡</td>
                 <td class="hint cell" onclick="HintClicked(this)">💡 </td>
                 <td class="hint cell" onclick="HintClicked(this)">💡 </td>
             </tr>
-            
-           
+
+
         </tbody>
     </table>
-    <div class="menu"><button onclick="mode(4, 2, 'easy')">Easy</button>
-        <button onclick="mode(8, 6, 'medium')">Medium</button>
-        <button onclick="mode(12, 30, 'hard')">Hard</button>
-        
+
+    <div class="menu"><button onclick="mode(4, 2, 'Easy')">Easy</button>
+        <button onclick="mode(8, 6, 'Medium')">Medium</button>
+        <button onclick="mode(12, 30, 'Hard')">Hard</button>
+
     </div>
-    <div class="menu"><button onclick="manual()" >Manual</button>
-        <button onclick="undo()">Undo</button>
-        <button onclick="safeClick(this)">Safe Clicks: <span class="safe" >3</span> </button></div>
+    <div class="menu"><button onclick="manual()">Manual</button>
+        <button onclick="undo()" class="life">Undo</button>
+        <button onclick="safeClick(this)" class="hint">Safe Clicks: <span class="safe">3</span> </button></div>
 
-
-    <table border="1">
+    <div class="menu"><span>⏲️&nbsp;&nbsp;&nbsp;&nbsp;</span><span
+            class="sec">0</span><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;⏲️</span></div>
+    <table>
         <tbody class="board" oncontextmenu="return false"></tbody>
 
     </table>
-    
+
+
     <script src="js/utils.js"></script>
     <script src="js/game.js"></script>
 </body>
