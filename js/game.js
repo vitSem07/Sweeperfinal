@@ -50,18 +50,19 @@ function initGame() {
             toggleClass(elHintsUsed[i], 'hintUsed');
 
         }
-        var elSafe = document.querySelectorAll('.safe');
-        elSafe.innerText = gGame.safeClicks;
+
     } else if (gGame.isManual) manual();
+    var elSafe = document.querySelectorAll('.safe');
+    elSafe.innerText = gGame.safeClicks;
     var elSmiley = document.querySelector('.smiley');
     elSmiley.innerText = '😀';
     var elTimer = document.querySelector('.sec');
     elTimer.innerText = gGame.secsPassed;
     gGame.isOn = true;
     var prevBest = localStorage.getItem(gLevel.lvlName);
-    if (!prevBest) prevBest = 0
+    if (!prevBest) prevBest = 'No Win Yet'
     var elBest = document.querySelector('.best');
-    elBest.innerText = '🏆 ' + gLevel.lvlName + ': ' + prevBest + ' Seconds';
+    elBest.innerText = '🏆 ' + gLevel.lvlName + ' Seconds: ' + prevBest;
 }
 
 function cellMarked(elCell, i, j) {
