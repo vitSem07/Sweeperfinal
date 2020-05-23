@@ -233,13 +233,13 @@ function undo() {
     if (!gGame.prevTurns.length) return;
     if (gGame.isUndo || gGame.isManual) return;
     gGame.isUndo = true;
-    var elBtn;
+    var elBtns;
     var prevTurn = gGame.prevTurns[gGame.prevTurns.length - 1];
     if (prevTurn === 'life' || prevTurn === 'game over') {
         gGame.lifesCount++;
-        elBtn = document.querySelector(`.lifeUsed`);
-        toggleClass(elBtn, 'life');
-        toggleClass(elBtn, 'lifeUsed');
+        elBtns = document.querySelectorAll(`.lifeUsed`);
+        toggleClass(elBtns[elBtns.length-1], 'life');
+        toggleClass(elBtns[elBtns.length-1], 'lifeUsed');
         if (prevTurn === 'game over') {
             gGame.isOn = true;
             var elSmiley = document.querySelector('.smiley');
@@ -251,13 +251,13 @@ function undo() {
         }
     } else if (prevTurn === 'hint') {
         gGame.hintCount++;
-        elBtn = document.querySelector(`.hintUsed`);
-        toggleClass(elBtn, 'hint');
-        toggleClass(elBtn, 'hintUsed');
+        elBtns = document.querySelectorAll(`.hintUsed`);
+        toggleClass(elBtns[elBtns.length-1], 'hint');
+        toggleClass(elBtns[elBtns.length-1], 'hintUsed');
     } else if (prevTurn === 'safe') {
         gGame.safeClicks++;
-        elBtn = document.querySelector(`.safe`);
-        elBtn.innerText = gGame.safeClicks;
+        elBtns = document.querySelector(`.safe`);
+        elBtns.innerText = gGame.safeClicks;
     } else {
         var elCell = document.querySelector(`.cell-${prevTurn.i}-${prevTurn.j}`);
         cellClicked(elCell, prevTurn.i, prevTurn.j);
