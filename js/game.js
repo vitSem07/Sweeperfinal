@@ -52,7 +52,8 @@ function initGame() {
         }
 
     } else if (gGame.isManual) manual();
-    var elSafe = document.querySelectorAll('.safe');
+
+    var elSafe = document.querySelector('.safe');
     elSafe.innerText = gGame.safeClicks;
     var elSmiley = document.querySelector('.smiley');
     elSmiley.innerText = '😀';
@@ -238,8 +239,8 @@ function undo() {
     if (prevTurn === 'life' || prevTurn === 'game over') {
         gGame.lifesCount++;
         elBtns = document.querySelectorAll(`.lifeUsed`);
-        toggleClass(elBtns[elBtns.length-1], 'life');
-        toggleClass(elBtns[elBtns.length-1], 'lifeUsed');
+        toggleClass(elBtns[elBtns.length - 1], 'life');
+        toggleClass(elBtns[elBtns.length - 1], 'lifeUsed');
         if (prevTurn === 'game over') {
             gGame.isOn = true;
             var elSmiley = document.querySelector('.smiley');
@@ -252,8 +253,8 @@ function undo() {
     } else if (prevTurn === 'hint') {
         gGame.hintCount++;
         elBtns = document.querySelectorAll(`.hintUsed`);
-        toggleClass(elBtns[elBtns.length-1], 'hint');
-        toggleClass(elBtns[elBtns.length-1], 'hintUsed');
+        toggleClass(elBtns[elBtns.length - 1], 'hint');
+        toggleClass(elBtns[elBtns.length - 1], 'hintUsed');
     } else if (prevTurn === 'safe') {
         gGame.safeClicks++;
         elBtns = document.querySelector(`.safe`);
